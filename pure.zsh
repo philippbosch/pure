@@ -23,7 +23,7 @@ prompt_pure_git_dirty() {
 	# check if it's dirty
 	command git diff --quiet --ignore-submodules HEAD &>/dev/null
 
-	(($? == 1)) && echo '*'
+	(($? == 1)) && echo ' *'
 }
 
 # displays the exec time of the last command if set threshold was exceeded
@@ -55,7 +55,7 @@ prompt_pure_precmd() {
 	# git info
 	vcs_info
 
-	local prompt_pure_preprompt='\n%F{blue}%~%F{242}$vcs_info_msg_0_`prompt_pure_git_dirty` $prompt_pure_username%f %F{yellow}`prompt_pure_cmd_exec_time`%f'
+	local prompt_pure_preprompt='\n%F{blue}%~%F{242}$vcs_info_msg_0_%F{magenta}`prompt_pure_git_dirty` $prompt_pure_username%f %F{yellow}`prompt_pure_cmd_exec_time`%f'
 	print -P $prompt_pure_preprompt
 
 	# check async if there is anything to pull
@@ -93,7 +93,7 @@ prompt_pure_setup() {
 	[[ "$SSH_CONNECTION" != '' ]] && prompt_pure_username='%n@%m '
 
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
+	PROMPT='%(?.%F{green}.%F{red})❯%f '
 }
 
 prompt_pure_setup "$@"
