@@ -59,7 +59,7 @@ prompt_pure_precmd() {
 	# git info
 	vcs_info
 
-	local prompt_pure_preprompt='\n%F{blue}%~%F{242}$vcs_info_msg_0_%F{magenta}`prompt_pure_git_dirty` %F{black}%K{237}`prompt_pure_virtualenv_name`%k $prompt_pure_username%f %F{yellow}`prompt_pure_cmd_exec_time`%f'
+	local prompt_pure_preprompt='\n%F{blue}%~%F{242}$vcs_info_msg_0_%F{magenta}`prompt_pure_git_dirty` %F{black}%K{237}`prompt_pure_virtualenv_name`%k %F{9}$prompt_pure_username%f %F{yellow}`prompt_pure_cmd_exec_time`%f'
 	print -P $prompt_pure_preprompt
 
 	# check async if there is anything to pull
