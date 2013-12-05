@@ -27,7 +27,7 @@ prompt_pure_git_dirty() {
 }
 
 prompt_pure_virtualenv_name() {
-	[[ "$VIRTUAL_ENV" != '' ]] && print -P " `basename \`dirname $VIRTUAL_ENV\`` "
+	[[ "$VIRTUAL_ENV" != '' ]] && print -P " `basename $VIRTUAL_ENV` "
 }
 
 # displays the exec time of the last command if set threshold was exceeded
